@@ -4,6 +4,7 @@ import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import { DynamicFooter } from "@/components/dynamic-footer"
 import { WhatsAppFloat } from "@/components/whatsapp-float"
+import { AutoBreadcrumb } from "@/components/breadcrumb"
 import { Button } from "@/components/ui/button"
 import { MapPin, Phone, Star, CheckCircle, MessageCircle, Clock } from "lucide-react"
 import Image from "next/image"
@@ -103,6 +104,13 @@ export function ServicePageTemplate({
   return (
     <main className="min-h-screen">
       <Navigation />
+      
+      {/* Breadcrumb for SEO */}
+      <AutoBreadcrumb 
+        pageTitle={title} 
+        category="Services" 
+        domain={effectiveDomain || undefined} 
+      />
 
       {/* Hero Section */}
       <section className="pt-24 sm:pt-28 md:pt-32 pb-10 md:pb-16 bg-gradient-to-br from-primary to-primary/80 text-white">
